@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style type="text/css">
+
+@import
+	url('https://fonts.googleapis.com/css?family=Kaushan+Script|Lobster+Two|Viaoda+Libre&display=swap')
+	;
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 10000;
+    transition: all 0.2s ease-in-out;
+    height: auto;
+    background-color:transparent;  
+    
+    text-align: center;
+    line-height: 40px;
+    transition: background .4s ease-in;
+}
+
+.header h1 {
+	font-size: 40px;
+	font-weight: 400;
+	text-align: center;
+	font-family: 'Kaushan Script';
+	color: #fff;
+	margin:5px;
+}
+
+.active {
+    background:rgba(16, 16, 16, 0.82) ;
+   
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+.active h1{
+ color:#9d9d9d;
+ z-index:9;
+}
+.active h1:hover{
+color:#fff;
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    $(window).on("scroll", function() {
+        if($(window).scrollTop() > 50) {
+            $(".header").addClass("active");
+        } else {
+            //remove the background property so it comes transparent again (defined in your css)
+           $(".header").removeClass("active");
+        }
+    });
+});
+</script>
+
+</head>
+<body>
+<div class="header"><h1>Sports Event Management</h1></div>
+
+</body>
+</html>
