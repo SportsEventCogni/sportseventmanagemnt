@@ -1,5 +1,7 @@
 package com.project.sports.event.management.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,10 +51,20 @@ public class EventController {
 	
 	  // Show Event Update Page
 		@RequestMapping("/updateEvent")
-		public String showUpdateForm(@ModelAttribute("event") Event event ) {
-			event = new Event();
+		public String showUpdateForm(@ModelAttribute("event") Event event,ModelMap map ) {
+			Event evt=eventRepository.getAll(event.getEventId());
+			map.put("event", evt);
 			return "updateEvent";
 		}
+		
+		@RequestMapping("/listEvent")
+		public String listEvent(@ModelAttribute("event") Event event,ModelMap m ) {
+			List<Event> li = eventRepository.findAll();
+			m.put("li", li);
+			return "eventList";
+		}
+		
+		
 
 		// Event Update Submission
 		

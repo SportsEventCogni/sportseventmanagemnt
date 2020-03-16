@@ -140,7 +140,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input path="eventId" class="form-control" name="eventId"
-									placeholder="Event Id" required="required" readonly="true" />
+									placeholder="Event Id" value="${event.getEventId() }" required="required" readonly="true" />
 							</div>
 						</div></td>
 
@@ -151,8 +151,8 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input class="form-control" path="eventName"
-									name="eventName" required="required" readonly="true"
-									placeholder="Event Name" />
+									name="eventName" required="required" readonly="true" 
+									placeholder="Event Name" value="${event.getEventName() }" />
 							</div>
 						</div></td>
 
@@ -163,7 +163,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 								<form:input class="form-control" path="sportsName"
-								 readonly="true"	name="sportsName" required="required" placeholder="Sports Name" />
+								 readonly="true"	name="sportsName" required="required" placeholder="Sports Name" value="${event.getSportsName() }" />
 							</div>
 						</div></td>
 					<td><form:errors path="sportsName"></form:errors></td>
@@ -175,7 +175,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input type="date" class="form-control" name="Date"
-									path="Date" required="required" placeholder="Date" />
+									path="Date" required="required" placeholder="Date" value="${event.getDate() }" />
 							</div>
 						</div></td>
 
@@ -186,7 +186,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-id-card"></i></span>
 								<form:input path="time" class="form-control" name="time"
-									placeholder="Time" required="required" />
+									placeholder="Time" required="required" value="${event.getTime() }" />
 							</div>
 						</div></td>
 					<td><form:errors path="time"></form:errors></td>
@@ -198,7 +198,7 @@ body {
 									<i class="fa fa-check"></i>
 								</span>
 								<form:input path="venue" class="form-control" name="venue"
-									placeholder="Venue" required="required" />
+									placeholder="Venue" required="required" value="${event.getVenue() }" />
 							</div>
 						</div></td>
 
@@ -209,7 +209,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input class="form-control" name="noOfSlots"
-									path="noOfSlots" required="required" placeholder="No Of Slots" />
+									path="noOfSlots" required="required" placeholder="No Of Slots" value="${event.getNoOfSlots() }" />
 							</div>
 						</div></td>
 
