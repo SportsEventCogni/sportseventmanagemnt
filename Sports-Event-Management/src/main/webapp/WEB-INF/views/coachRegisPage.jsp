@@ -128,12 +128,53 @@ body {
 	font-size: 7px;
 	position: absolute;
 }
+.error
+{
+color:red;}
 </style>
+
+
+<script>
+	function validatingForm() {
+		if (document.form.firstName.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+		if (document.form.lastName.value == "") {
+			alert("Please update the highlighted field");
+			document.userform.password.focus();
+			return false;
+		}
+		if (document.form.age.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+		if (document.form.contact.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+
+		if (document.form.coachId.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+		if (document.form.password.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+
+	}
+</script>
 </head>
 <body>
 	<div class="signup-form">
-		<form:form action="coachRegisterUser" method="get"
-			modelAttribute="coach">
+		<form:form name="form" action="coachRegisterUser" method="get"
+			modelAttribute="coach" onsubmit="validatingForm();"> 
 			<h2>Coach Registration</h2>
 			<table>
 				<tr>
@@ -141,32 +182,32 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input path="firstName" class="form-control"
-									name="firstName" placeholder="First Name" required="required" />
+									name="firstName" placeholder="First Name" />
 							</div>
 						</div></td>
 
-					<td><form:errors path="firstName"></form:errors></td>
+					<td><form:errors path="firstName" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input class="form-control" path="lastName" name="lastName"
-									required="required" placeholder="Last Name" />
+									 placeholder="Last Name" />
 							</div>
 						</div></td>
 
-					<td><form:errors path="lastName"></form:errors></td>
+					<td><form:errors path="lastName" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 								<form:input class="form-control" path="age" name="age"
-									required="required" placeholder="Age" />
+									placeholder="Age" />
 							</div>
 						</div></td>
-					<td><form:errors path="age"></form:errors></td>
+					<td><form:errors path="age" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
@@ -199,21 +240,21 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input class="form-control" name="contact" path="contact"
-									required="required" placeholder="Contact Number" />
+									 placeholder="Contact Number" />
 							</div>
 						</div></td>
 
-					<td><form:errors path="contact"></form:errors></td>
+					<td><form:errors path="contact" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-id-card"></i></span>
 								<form:input path="coachId" class="form-control" name="coachId"
-									placeholder="Coach Id" required="required" />
+									placeholder="Coach Id" />
 							</div>
 						</div></td>
-					<td><form:errors path="coachId"></form:errors></td>
+					<td><form:errors path="coachId" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
@@ -222,11 +263,11 @@ body {
 									<i class="fa fa-check"></i>
 								</span>
 								<form:input path="password" class="form-control" name="password"
-									placeholder="Password" required="required" />
+									placeholder="Password"  />
 							</div>
 						</div></td>
 
-					<td><form:errors path="password"></form:errors></td>
+					<td><form:errors path="password" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">

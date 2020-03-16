@@ -128,11 +128,54 @@ body {
 	font-size: 7px;
 	position: absolute;
 }
+.error
+{
+color:red;'}"
 </style>
+<script>
+	function validatingForm() {
+		if (document.form.eventId.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+		if (document.form.eventName.value == "") {
+			alert("Please update the highlighted field");
+			document.userform.password.focus();
+			return false;
+		}
+		if (document.form.sportsName.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+		if (document.form.Date.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+
+		if (document.form.time.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+		if (document.form.venue.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+		if (document.form.noOfSlots.value == "") {
+			alert("Please update the highlighted field");
+			document.loginform.userName.focus();
+			return false;
+		}
+	}
+</script>
 </head>
 <body>
 	<div class="signup-form">
-		<form:form action="eventRegister" method="post" modelAttribute="event">
+		<form:form name="form" action="eventRegister" method="get" modelAttribute="event" onsubmit="return validatingForm();">
 			<h2>Make Your Event</h2>
 			<table>
 				<tr>
@@ -140,32 +183,32 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input path="eventId" class="form-control" name="eventId"
-									placeholder="Event Id" required="required" />
+									placeholder="Event Id"  />
 							</div>
 						</div></td>
 
-					<td><form:errors path="eventId"></form:errors></td>
+					<td><form:errors path="eventId" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input class="form-control" path="eventName"
-									name="eventName" required="required" placeholder="Event Name" />
+									name="eventName"  placeholder="Event Name" />
 							</div>
 						</div></td>
 
-					<td><form:errors path="eventName"></form:errors></td>
+					<td><form:errors path="eventName" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 								<form:input class="form-control" path="sportsName"
-									name="sportsName" required="required" placeholder="Sports Name" />
+									name="sportsName"  placeholder="Sports Name" />
 							</div>
 						</div></td>
-					<td><form:errors path="sportsName"></form:errors></td>
+					<td><form:errors path="sportsName" class="error"></form:errors></td>
 				</tr>
 
 
@@ -174,21 +217,21 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input  type="date" class="form-control" name="Date" path="Date"
-									required="required" placeholder="Date" />
+									 placeholder="Date" />
 							</div>
 						</div></td>
 
-					<td><form:errors path="Date"></form:errors></td>
+					<td><form:errors path="Date" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-id-card"></i></span>
 								<form:input  path="time" class="form-control" name="time"
-									placeholder="Time" required="required" />
+									placeholder="Time" />
 							</div>
 						</div></td>
-					<td><form:errors path="time"></form:errors></td>
+					<td><form:errors path="time" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
@@ -197,22 +240,22 @@ body {
 									<i class="fa fa-check"></i>
 								</span>
 								<form:input path="venue" class="form-control" name="venue"
-									placeholder="Venue" required="required" />
+									placeholder="Venue"  />
 							</div>
 						</div></td>
 
-					<td><form:errors path="venue"></form:errors></td>
+					<td><form:errors path="venue" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input class="form-control" name="noOfSlots"
-									path="noOfSlots" required="required" placeholder="No Of Slots" />
+									path="noOfSlots"  placeholder="No Of Slots" />
 							</div>
 						</div></td>
 
-					<td><form:errors path="noOfSlots"></form:errors></td>
+					<td><form:errors path="noOfSlots" class="error"></form:errors></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
@@ -220,7 +263,7 @@ body {
 								class="btn btn-primary btn-block btn-lg" />
 						</div></td>
 				</tr>
-				<table>
+				</table>
 					</form:form>
 </body>
 </html>

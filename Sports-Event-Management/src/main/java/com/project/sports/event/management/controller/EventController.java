@@ -9,12 +9,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.project.sports.event.management.model.Credentials;
 import com.project.sports.event.management.model.Event;
 import com.project.sports.event.management.model.Organizer;
 import com.project.sports.event.management.repository.EventRepository;
 
+
+@SessionAttributes({"id", "notifyUpdate"} )
 @Controller
 public class EventController {
 
@@ -30,7 +33,7 @@ public class EventController {
 
 	// Event Registration Submission
 	
-	@RequestMapping(value = "/eventRegister", method = RequestMethod.POST)
+	@RequestMapping(value = "/eventRegister", method = RequestMethod.GET)
 	public String registerUser(@Valid @ModelAttribute("event") Event event, BindingResult bindingResult,
 			ModelMap map) {
 
@@ -55,8 +58,7 @@ public class EventController {
 		}
 
 		// Event Update Submission
-		
-		@RequestMapping(value = "/updateEventF", method = RequestMethod.POST)
+		@RequestMapping(value = "/updateEventF", method = RequestMethod.GET)
 		public String registerEvent(@Valid @ModelAttribute("event") Event event, BindingResult bindingResult,
 				ModelMap map) {
 
@@ -64,9 +66,10 @@ public class EventController {
 				System.out.println("ui details not correct");
 				return "updateEvent";
 			}
-
+			map.put("notifyUpdate", event.getEventId());
 			eventRepository.updateEvent(event.getEventId(), event.getDate(), event.getTime(), event.getVenue(), event.getNoOfSlots());
-			map.put("successful", event.getEventName()+ "  is successfully Registered");
+			map.put("successful", event.getEventName()+ "  is successfully Updated");
+			
 		
 			return "organizerHome";
 		}
@@ -74,12 +77,13 @@ public class EventController {
 		
 		// Delete Event
 		@RequestMapping("/deleteEvent")
-		public String deleteEvent(@ModelAttribute("event") Event event ) {
+		public String deleteEvent(@ModelAttribute("event") Event event, ModelMap map ) {
 			event = new Event();
 			eventRepository.deleteEvent(event.getEventId());
+			map.addAttribute("notifyUpdate", event.getEventName() + " is deleted");
 			return "updateEvent";
 		}
 
 		
-
+//
 }

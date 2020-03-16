@@ -1,5 +1,6 @@
 package com.project.sports.event.management.model;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component

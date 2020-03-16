@@ -20,6 +20,7 @@ import com.project.sports.event.management.model.Credentials;
 import com.project.sports.event.management.model.Organizer;
 import com.project.sports.event.management.repository.OrganizerRepository;
 
+@SessionAttributes( {"id","notifyUpdate"}  )
 @Controller
 public class OrganizerLoginController {
 
@@ -51,7 +52,7 @@ public class OrganizerLoginController {
     
            if (org != null) {
                   session.setAttribute("id", credentials.getId());
-                  map.put("name", credentials.getId());
+                  map.put("id", credentials.getId());
                   return "organizerHome";
            } 
            

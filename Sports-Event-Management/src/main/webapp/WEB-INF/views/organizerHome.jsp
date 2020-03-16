@@ -1,5 +1,9 @@
+<%@page
+	import="org.springframework.web.bind.annotation.SessionAttribute"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -76,12 +80,38 @@ a:hover {
 	text-decoration: none;
 }
 </style>
+
+<script type="text/javaScript">
+	function disableBackButton() {
+		window.history.forward();
+	}
+	setTimeout("disableBackButton()", 0);
+</script>
+
 </head>
-<body>
+<body onload="disableBackButton()">
+
+
+
+
+	<%
+		if (session.getAttribute("notifyUpdate") != null) {
+			String notify = (String) session.getAttribute("notifyUpdate");
+
+			out.println();
+
+			out.println(" </br></br> <div>  <b> <marquee>" + notify + " is Updated </marquee>  </b> </div>");
+
+			session.invalidate();
+
+		}
+	%>
+
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<div class="box">
-		<h1>Welcome ${name }</h1>
+		<h1>Welcome ${id}</h1>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -126,8 +156,8 @@ a:hover {
 							<h4>Update Event</h4>
 						</div>
 						<div class="text">
-							<span>It will redirect to the page where you can update Events
-								</span> <a href="updateEvent"><button type="submit"
+							<span>It will redirect to the page where you can update
+								Events </span> <a href="updateEvent"><button type="submit"
 									class="btn btn-block">Update</button></a>
 						</div>
 					</div>
@@ -139,8 +169,8 @@ a:hover {
 							<h4>Cancel Event</h4>
 						</div>
 						<div class="text">
-							<span>It will redirect to the page where you can cancel an Event
-								</span> <a href="/home"><button type="submit"
+							<span>It will redirect to the page where you can cancel an
+								Event </span> <a href="/home"><button type="submit"
 									class="btn btn-block">Cancel</button></a>
 						</div>
 					</div>

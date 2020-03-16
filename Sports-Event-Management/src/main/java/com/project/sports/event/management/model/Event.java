@@ -2,17 +2,30 @@ package com.project.sports.event.management.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
+import org.springframework.stereotype.Component;
+@Component
 @Entity
 public class Event {
 
 	@Id
+	@NotEmpty(message="eventId can't be empty")
+	
 	private String eventId;
+	@NotEmpty(message="event name can.t be empty")
 	private String eventName;
+	@NotEmpty(message="sports name can.t be empty")
 	private String sportsName;
+	@Min(01/01/2020) @Max(15/03/2020)
+	@NotEmpty(message="date should be between 1/1/2020 and 15/03/2020")
 	private String date;
+	
 	private String time;
+	@NotEmpty(message="venue cant be null")
 	private String venue;
 	
 	@Pattern(regexp = "[1-4]{1}", message = "Select slots between 1-4")
