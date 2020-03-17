@@ -135,7 +135,7 @@ body {
 </head>
 <body>
 	<div class="signup-form">
-		<form:form action="updateSportRegister" method="get" modelAttribute="sports">
+		<form:form action="sportRegister" method="get" modelAttribute="sports">
 			<h2>Sport Update</h2>
 			<table>
 
@@ -145,7 +145,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input path="sportsId" class="form-control" name="sportsId"
-									readonly="true" value="${spo.getSportsId() }" required="required" />
+									readonly="true" placeholder="Sports Id" required="required" />
 								<td><form:errors path="sportsId"></form:errors></td>
 
 
@@ -158,7 +158,7 @@ body {
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input path="sportsName" class="form-control"
 									readonly="true" name="sportsName" placeholder="Sports Name"
-									value="${spo.getSportsName() }" required="required" />
+									required="required" />
 								<td><form:errors path="sportsName"></form:errors></td>
 							</div>
 						</div></td>
@@ -169,7 +169,7 @@ body {
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input path="sportsType" class="form-control"
 									readonly="true" name="sportsType" placeholder="Sports Type"
-									value="${spo.getSportsType() }" required="required" />
+									required="required" />
 								<td><form:errors path="sportsType"></form:errors></td>
 							</div>
 						</div></td>
@@ -180,7 +180,7 @@ body {
 								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 								<form:input type="text" path="noOfPlayers" class="form-control"
 									name="noOfPlayers" placeholder="No of Players"
-								value="${spo.getNoOfPlayers() }"	required="required" />
+									required="required" />
 								<td><form:errors path="noOfPlayers"></form:errors></td>
 							</div>
 						</div></td>
@@ -193,7 +193,7 @@ body {
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input path="timeOfMatch" class="form-control"
 									name="timeOfMatch" placeholder="Time Of Match"
-									value="${spo.getTimeOfMatch() }" required="required" />
+									required="required" />
 								<td><form:errors path="timeOfMatch"></form:errors></td>
 							</div>
 						</div></td>

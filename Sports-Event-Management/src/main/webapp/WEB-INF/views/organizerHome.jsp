@@ -103,7 +103,7 @@ a:hover {
 						</div>
 						<div class="text">
 							<span>It will redirect to the page where you can update
-								sport type.</span> <a href="listsports"><button type="submit"
+								sport type.</span> <a href="updateSport"><button type="submit"
 									class="btn btn-block">Update</button></a>
 						</div>
 					</div>
@@ -127,7 +127,7 @@ a:hover {
 						</div>
 						<div class="text">
 							<span>It will redirect to the page where you can update Events
-								</span> <a href="listEvent"><button type="submit"
+								</span> <a href="updateEvent"><button type="submit"
 									class="btn btn-block">Update</button></a>
 						</div>
 					</div>
