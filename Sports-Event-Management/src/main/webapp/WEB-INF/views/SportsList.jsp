@@ -7,8 +7,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+body{
+background-image: url("drawable/sportsAdd.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+</style>
 </head>
 <body>
+<%@include file="header.html" %>
 <form:form action="updateSport" method="get" modelAttribute="sports">
  
 <form:select path="sportsId">  

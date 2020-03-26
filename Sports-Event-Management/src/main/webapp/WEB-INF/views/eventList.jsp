@@ -7,8 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+body{background-image: url("drawable/eventAdd.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;}
+</style>
 </head>
 <body>
+<%@include file="header.html" %>
 <form:form action="updateEvent" method="get" modelAttribute="event">
  
 <form:select path="eventId">  

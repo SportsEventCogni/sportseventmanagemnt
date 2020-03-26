@@ -50,8 +50,8 @@ public class OrganizerLoginController {
            Organizer org = organizerRepository.getOrganizer(credentials.getId(), credentials.getPassword());
     
            if (org != null) {
-                  session.setAttribute("id", credentials.getId());
-                  map.put("name", credentials.getId());
+                  session.setAttribute("id", credentials);
+                  map.put("credentials", credentials);
                   return "organizerHome";
            } 
            
@@ -91,8 +91,8 @@ public class OrganizerLoginController {
 	
 	@RequestMapping(value = "logout", method = RequestMethod.GET)
     public String logout(HttpSession session) {
-           session.removeAttribute("name");
-           return "home";
+           session.invalidate();
+           return "redirect:/home";
     }
 
 	

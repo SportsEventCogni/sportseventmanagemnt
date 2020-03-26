@@ -21,7 +21,9 @@
 <style type="text/css">
 body {
 	color: #999;
-	background: #f5f5f5;
+	background-image: url("drawable/eventAdd.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -35,6 +37,7 @@ body {
 	margin: 0 auto;
 	padding: 30px 0;
 	border-radius: 9px;
+	margin-top:80px;
 }
 
 .signup-form h2 {
@@ -131,7 +134,9 @@ body {
 </style>
 </head>
 <body>
+<%@include file="header.html" %>
 	<div class="signup-form">
+	
 		<form:form action="updateEventF" method="post" modelAttribute="event">
 			<h2>Edit Your Event</h2>
 			<table>
