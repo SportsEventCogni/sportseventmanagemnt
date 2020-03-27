@@ -51,11 +51,11 @@ public class EventController {
 	
 	  // Show Event Update Page
 		@RequestMapping("/updateEvent")
-		public String showUpdateForm(@ModelAttribute("event") Event event,ModelMap map ) {
-			Event evt=eventRepository.getAll(event.getEventId());
-			map.put("event", evt);
+		public String showUpdateForm(@ModelAttribute("event") Event event ) {
+			event = new Event();
 			return "updateEvent";
 		}
+
 		
 		@RequestMapping("/listEvent")
 		public String listEvent(@ModelAttribute("event") Event event,ModelMap m ) {
@@ -63,9 +63,8 @@ public class EventController {
 			m.put("li", li);
 			return "eventList";
 		}
-		
-		
 
+			
 		// Event Update Submission
 		
 		@RequestMapping(value = "/updateEventF", method = RequestMethod.POST)

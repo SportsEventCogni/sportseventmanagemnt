@@ -28,8 +28,7 @@ public class Organizer {
 	private String lastName;
 	
 	@NotNull(message = "It can't be empty")
-	@Min(20)
-	private int age;
+	private String age;
 	private String gender;
 	
 	@NotNull(message = "It can't be empty")
@@ -59,12 +58,12 @@ public class Organizer {
 
 
 
-	public Organizer(String firstName, String lastName, int age, String gender, String contact, String organizerId,
+	public Organizer(String firstName, String lastName, String age, String gender, String contact, String organizerId,
 			String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.age = age;
+		this.age =  age;
 		this.gender = gender;
 		this.contact = contact;
 		this.organizerId = organizerId;
@@ -97,13 +96,13 @@ public class Organizer {
 
 
 
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
 
 
 
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 
