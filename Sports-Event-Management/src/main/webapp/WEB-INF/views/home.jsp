@@ -11,7 +11,9 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700')
 	;
 
-
+@import
+	url('https://fonts.googleapis.com/css?family=Kaushan+Script|Lobster+Two|Viaoda+Libre&display=swap')
+	;
 
 /* Design */
 *, *::before, *::after {
@@ -38,7 +40,14 @@ body {
 	margin: 0 auto;
 }
 
-
+h1 {
+	font-size: 70px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 150px;
+	font-family: 'Kaushan Script';
+	color: #fff;
+}
 
 img {
 	height: 300px;
@@ -69,7 +78,7 @@ img {
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
-	margin-top: 150px;
+	margin: 0;
 	padding: 0;
 }
 
@@ -125,9 +134,8 @@ img {
 </style>
 </head>
 <body>
-
 	<div class="main">
-	<%@include file="header.html" %>
+		<h1>Sports Event Management</h1>
 		<ul class="cards">
 			<li class="cards_item">
 				<div class="card">

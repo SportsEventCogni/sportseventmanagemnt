@@ -7,9 +7,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+body{background-image: url("drawable/eventAdd.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;}
+</style>
 </head>
 <body>
-<form:form action="updateEvent" method="get" modelAttribute="event">
+<%@include file="header.html" %>
+
+<center>
+<form:form style="margin-top:90px; "  action="updateEvent" method="get" modelAttribute="event">
  
 <form:select path="eventId">  
    <c:forEach var="list" items="${li}">
@@ -21,5 +29,7 @@
 
 <input type="submit" value="submit">
 </form:form>
+
+</center>
 </body>
 </html>
