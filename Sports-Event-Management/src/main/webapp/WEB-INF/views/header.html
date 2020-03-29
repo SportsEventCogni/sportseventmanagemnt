@@ -1,16 +1,19 @@
+
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<style type="text/css">
-
-@import
-	url('https://fonts.googleapis.com/css?family=Kaushan+Script|Lobster+Two|Viaoda+Libre&display=swap')
-	;
-
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      
 .header {
     position: fixed;
     top: 0;
@@ -27,16 +30,9 @@
     transition: background .4s ease-in;
 }
 
-.header h1 {
-	font-size: 40px;
-	font-weight: 400;
-	text-align: center;
-	font-family: 'Kaushan Script';
-	color: #fff;
-	margin:5px;
-}
 
 .active {
+  
     background:rgba(16, 16, 16, 0.82) ;
    
     -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
@@ -50,23 +46,63 @@
 .active h1:hover{
 color:#fff;
 }
-</style>
-<script type="text/javascript">
-$(function() {
-    $(window).on("scroll", function() {
-        if($(window).scrollTop() > 50) {
-            $(".header").addClass("active");
-        } else {
-            //remove the background property so it comes transparent again (defined in your css)
-           $(".header").removeClass("active");
-        }
-    });
-});
-</script>
+        nav{
+            height: 80px;
+            color: #00AFF5;
 
+        }
+        .navbar-text{
+            text-align: right;
+        }
+        .navbar-brand{
+            font-family: 'Baloo Chettan', cursive;
+            font-size: 40px;
+        }
+        .navbar-brand:hover{
+            font-family: 'Baloo Chettan', cursive;
+            font-size: 40px;
+            color: #00AFF5;
+        }
+      
+    </style>
+    <script type="text/javascript">
+    $(function() {
+        $(window).on("scroll", function() {
+            if($(window).scrollTop() > 50) {
+                $(".header").addClass("active");
+            } else {
+                //remove the background property so it comes transparent again (defined in your css)
+               $(".header").removeClass("active");
+            }
+        });
+    });
+    </script>
 </head>
 <body>
-<div class="header"><h1>Sports Event Management</h1></div>
+
+
+<div class="header navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Sports Event Management</a>
+    
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/headerHome"> Home</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/listRequest"> Registration Requests</a>
+        </li>
+        
+         <li class="nav-item">
+            <a class="nav-link" href="/logout"> Logout</a>
+        </li>
+
+    </ul>
+
+</div>
+
+
 
 </body>
 </html>

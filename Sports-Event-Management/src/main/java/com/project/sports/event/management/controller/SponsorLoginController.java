@@ -37,11 +37,11 @@ public class SponsorLoginController {
 		Sponsor sponsor = sponsorRepository.getSponsor(credentials.getId(), credentials.getPassword());
 
 		if (sponsor != null) {
-			return "home";
+			return "redirect:/sportshome";
 		}
 
 		map.addAttribute("failed", "Credentials does not matched");
-		return "organizerLogin";
+		return "sponsorLogin";
 
 	}
 

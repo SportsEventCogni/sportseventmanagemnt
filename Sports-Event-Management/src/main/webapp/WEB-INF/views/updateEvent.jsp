@@ -21,7 +21,9 @@
 <style type="text/css">
 body {
 	color: #999;
-	background: #f5f5f5;
+	background-image: url("drawable/eventAdd.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -35,6 +37,7 @@ body {
 	margin: 0 auto;
 	padding: 30px 0;
 	border-radius: 9px;
+	margin-top:80px;
 }
 
 .signup-form h2 {
@@ -131,7 +134,9 @@ body {
 </style>
 </head>
 <body>
+<%@include file="header.html" %>
 	<div class="signup-form">
+	
 		<form:form action="updateEventF" method="post" modelAttribute="event">
 			<h2>Edit Your Event</h2>
 			<table>
@@ -140,7 +145,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input path="eventId" class="form-control" name="eventId"
-									placeholder="Event Id" value="${event.getEventId() }" required="required" readonly="true" />
+									placeholder="Event Id" required="required" readonly="true" />
 							</div>
 						</div></td>
 
@@ -151,8 +156,8 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input class="form-control" path="eventName"
-									name="eventName" required="required" readonly="true" 
-									placeholder="Event Name" value="${event.getEventName() }" />
+									name="eventName" required="required" readonly="true"
+									placeholder="Event Name" />
 							</div>
 						</div></td>
 
@@ -163,7 +168,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 								<form:input class="form-control" path="sportsName"
-								 readonly="true"	name="sportsName" required="required" placeholder="Sports Name" value="${event.getSportsName() }" />
+								 readonly="true"	name="sportsName" required="required" placeholder="Sports Name" />
 							</div>
 						</div></td>
 					<td><form:errors path="sportsName"></form:errors></td>
@@ -175,7 +180,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input type="date" class="form-control" name="Date"
-									path="Date" required="required" placeholder="Date" value="${event.getDate() }" />
+									path="Date" required="required" placeholder="Date" />
 							</div>
 						</div></td>
 
@@ -186,7 +191,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-id-card"></i></span>
 								<form:input path="time" class="form-control" name="time"
-									placeholder="Time" required="required" value="${event.getTime() }" />
+									placeholder="Time" required="required" />
 							</div>
 						</div></td>
 					<td><form:errors path="time"></form:errors></td>
@@ -198,7 +203,7 @@ body {
 									<i class="fa fa-check"></i>
 								</span>
 								<form:input path="venue" class="form-control" name="venue"
-									placeholder="Venue" required="required" value="${event.getVenue() }" />
+									placeholder="Venue" required="required" />
 							</div>
 						</div></td>
 
@@ -209,7 +214,7 @@ body {
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input class="form-control" name="noOfSlots"
-									path="noOfSlots" required="required" placeholder="No Of Slots" value="${event.getNoOfSlots() }" />
+									path="noOfSlots" required="required" placeholder="No Of Slots" />
 							</div>
 						</div></td>
 

@@ -37,7 +37,7 @@ public class CoachLoginController {
 		Coach coach = coachRepository.getCoach(credentials.getId(), credentials.getPassword());
 	
 		if (coach != null) {
-			return "home";
+			return "redirect:/coachHome";
 		} 
 		
 		map.addAttribute("failed", "Credentials does not matched");
