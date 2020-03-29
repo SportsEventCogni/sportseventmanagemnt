@@ -78,13 +78,16 @@ public class SportsController {
 	@RequestMapping("/listsports")
 	public String listform(@ModelAttribute("sports") Sports sports, ModelMap map) {
 		List<Sports> li = sportRepository.findAll();
-		List<String> lii = new ArrayList<>();
-		for (Sports s : li) {
-			lii.add(s.getSportsName());
-		}
 		map.put("li", li);
 
 		return "SportsList";
+	}
+	@RequestMapping("/sportshome")
+	public String sportsHome(@ModelAttribute("sports") Sports sports, ModelMap map) {
+		List<Sports> li = sportRepository.findAll();
+		map.put("sport", li);
+
+		return "SponsorHome";
 	}
 
 }

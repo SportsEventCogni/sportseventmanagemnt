@@ -179,7 +179,18 @@ window.onload = function() {
 						</div>
 					</div>
 				</div>
-
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+					<div class="box-part text-center">
+						<div class="title">
+							<h4>Nominate Sposort</h4>
+						</div>
+						<div class="text">
+							<span>It will redirect to the page where you can nominate and approveor reject nomination from sponsor.
+								</span> <a href=""><button type="submit"
+									class="btn btn-block">Cancel</button></a>
+						</div>
+					</div>
+				</div>
 
 
 			</div>

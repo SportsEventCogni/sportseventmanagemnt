@@ -91,6 +91,13 @@ public class EventController {
 			return "listeventdelete";
 		}
 		
+		@RequestMapping("/coachHome")
+		public String coachHome(@ModelAttribute("event") Event event,ModelMap m ) {
+			List<Event> li = eventRepository.findAll();
+			m.put("sport", li);
+			return "coachHome";
+		}
+		
 		
 		// Delete Event
 		@RequestMapping("/deleteEvent")
