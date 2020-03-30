@@ -156,6 +156,7 @@ body {
 </head>
 <body>
 
+
 	<%
 		String succ = (String) request.getAttribute("successful");
 		if (succ != null && succ != null)
@@ -201,5 +202,6 @@ body {
 			</div>
 		</form:form>
 	</div>
+	
 </body>
 </html>

@@ -108,7 +108,9 @@ public class OrganizerLoginController {
 	}
 
 	@RequestMapping(value = "logout", method = RequestMethod.GET)
-	public String logout(HttpSession session) {
+	public String logout(HttpSession session,HttpServletRequest request) {
+		Credentials s= (Credentials)session.getAttribute("id");
+		System.out.println(s);
 		session.invalidate();
 		return "redirect:/home";
 	}
