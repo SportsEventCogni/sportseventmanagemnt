@@ -130,21 +130,47 @@ body {
 	font-size: 7px;
 	position: absolute;
 }
+
+#fadeout {
+	opacity: 1;
+	transition: 1s opacity;
+	text-align: center;
+	font-size: 32px;
+}
 </style>
+
+
+
+<script type="text/javascript">
+	window.onload = function() {
+		window.setTimeout(fadeout, 1000); //8 seconds
+	}
+
+	function fadeout() {
+		document.getElementById('fadeout').style.opacity = '0';
+	}
+	
+</script>
+
+
 </head>
 <body>
 
 	<%
 		String succ = (String) request.getAttribute("successful");
 		if (succ != null && succ != null)
-			out.println(succ);
+			out.println( " <div  style='margin-top:50px;' id='fadeout'>" + succ + "</div> "  );
 
 		String fail = (String) request.getAttribute("failed");
+		
 		if (fail != null && fail.length() != 0)
-			out.println(fail);
+			out.println( " <div  style='margin-top:50px;' id='fadeout'>" + fail + "</div> "  );
 	%>
-
-
+	
+	
+	
+	
+	
 
 	<div class="signup-form">
 

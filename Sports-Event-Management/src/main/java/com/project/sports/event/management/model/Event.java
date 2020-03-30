@@ -2,19 +2,26 @@ package com.project.sports.event.management.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
 @Entity
 public class Event {
 
 	@Id
+	@NotEmpty(message = "event Id cannot be empty")
 	private String eventId;
+	@NotEmpty(message = "eventName cannot be empty")
 	private String eventName;
+	@NotEmpty(message = "sportsName cannot be empty")
 	private String sportsName;
+	@NotEmpty(message = "date cannot be left blank")
 	private String date;
+	@NotEmpty(message = "time cannot be left blank ")
 	private String time;
+	@NotEmpty(message = "venue cannot be left blank ")
 	private String venue;
-	
+
 	@Pattern(regexp = "[1-4]{1}", message = "Select slots between 1-4")
 	private String noOfSlots;
 
@@ -29,17 +36,15 @@ public class Event {
 		this.venue = venue;
 		this.noOfSlots = noOfSlots;
 	}
-	
+
 	public Event() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
 	@Override
 	public String toString() {
-		return "Event [eventId=" + eventId + ", eventName=" + eventName + ", sportsName=" + sportsName + ", Date="
-				+ date + ", time=" + time + ", venue=" + venue + ", noOfSlots=" + noOfSlots + "]";
+		return eventId + ":" + eventName + ":";
 	}
 
 	public String getEventId() {

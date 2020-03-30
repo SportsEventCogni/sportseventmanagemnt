@@ -59,15 +59,11 @@ body {
 }
 
 .signup-form .form-group {
-       margin-bottom: 5px; 
-       margin-top:15px;
+       margin-bottom: 20px;
 }
 
 .btn {
        
-}
-.error{
-color:#ff6666;
 }
 
 .btn:hover {
@@ -132,6 +128,10 @@ color:#ff6666;
        font-size: 7px;
        position: absolute;
 }
+
+.error {
+	color: red;
+}
 </style>
 </head>
 <body>
@@ -139,20 +139,20 @@ color:#ff6666;
               <form:form action="sponsorRegisterUser" method="get"
                      modelAttribute="sponsor">
                      <h2>Sponsor Registration</h2>
-                     
-                           
-                                  <div class="form-group">
+                     <table>
+                           <tr>
+                                  <td><div class="form-group">
                                                 <div class="input-group">
-                                                       <span class="input-group-addon"><i class=""></i></span>
+                                                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                                        <form:input path="sponsorId" class="form-control"
                                                               name="sponsorId" placeholder="Sponsor Id" required="required" />
                                                 </div>
-                                         </div>
+                                         </div></td>
 
-                                  <form:errors class="error" path="sponsorId"></form:errors>
-                      
-                           
-                                  <div class="form-group">
+                                  <td><form:errors path="sponsorId"></form:errors></td>
+                           </tr>
+                           <tr>
+                                  <td><div class="form-group">
                                                 <div class="input-group">
                                                        <span class="input-group-addon"> <i class="fa fa-lock"></i>
                                                               <i class="fa fa-check"></i>
@@ -160,35 +160,42 @@ color:#ff6666;
                                                        <form:input path="password" class="form-control" name="password"
                                                               placeholder="Password" required="required" />
                                                 </div>
-                                         </div>
+                                         </div></td>
 
-                                 <form:errors class="error" path="password"></form:errors>
-                           
+                                  <td><form:errors path="password"></form:errors></td>
+                           </tr>
                            
 
-                                  <div class="form-group">
+                           <tr>
+                                  <td><div class="form-group">
                                                 <div class="input-group">
                                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
                                                        <form:input class="form-control" name="sponsorProduct" path="sponsorProduct"
                                                               required="required" placeholder="Sponsor Product" />
                                                 </div>
-                                         </div>
+                                         </div></td>
 
-                                  <form:errors class="error" path="sponsorProduct"></form:errors>
-                                  <div class="form-group">
+                                  <td><form:errors path="sponsorProduct"></form:errors></td>
+                           </tr>
+                           <tr>
+                                  <td><div class="form-group">
                                                 <div class="input-group">
                                                        <span class="input-group-addon"><i class="fa fa-id-card"></i></span>
                                                        <form:input path="sponsorshipLocation" class="form-control"
                                                               name="sponsorshipLocation" placeholder="Sponsorship Location"
                                                               required="required" />
                                                 </div>
-                                         </div>
-                                  <form:errors class="error" path="sponsorshipLocation"></form:errors>
+                                         </div></td>
+                                  <td><form:errors path="sponsorshipLocation"></form:errors></td>
+                           </tr>
                            
-                                  <div class="form-group">
+                           <tr>
+                                  <td><div class="form-group">
                                                 <input type="submit" name="Register" value="Register"
                                                        class="btn btn-primary btn-block btn-lg" />
-                                         </div>
+                                         </div></td>
+                           </tr>
+                           <table>
                                   </form:form>
 
                                   <div class="text-center">

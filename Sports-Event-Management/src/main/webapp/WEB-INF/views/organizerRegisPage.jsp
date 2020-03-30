@@ -24,9 +24,6 @@ body {
 	background: #f5f5f5;
 	font-family: 'Roboto', sans-serif;
 }
-.error{
-color:#ff6666;
-}
 
 .form-control, .form-control:focus, .input-group-addon {
 	border-color: #e1e1e1;
@@ -62,8 +59,7 @@ color:#ff6666;
 }
 
 .signup-form .form-group {
-	 margin-bottom: 5px; 
-       margin-top:15px;
+	margin-bottom: 20px;
 }
 
 .btn {
@@ -132,6 +128,10 @@ color:#ff6666;
 	font-size: 7px;
 	position: absolute;
 }
+.error {
+	color: red;
+}
+
 </style>
 </head>
 <body>
@@ -139,41 +139,41 @@ color:#ff6666;
 		<form:form action="organizerRegisterUser" method="get"
 			modelAttribute="organizer">
 			<h2>Organizer Registration</h2>
-			
-				
-					<div class="form-group">
+			<table>
+				<tr>
+					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input path="firstName" class="form-control"
 									name="firstName" placeholder="First Name" required="required" />
 							</div>
-						</div>
+						</div></td>
 
-					<form:errors class="error" path="firstName"></form:errors>
-				
-				
-					<div class="form-group">
+					<td><form:errors path="firstName"></form:errors></td>
+				</tr>
+				<tr>
+					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input class="form-control" path="lastName" name="lastName"
 									required="required" placeholder="Last Name" />
 							</div>
-						</div>
+						</div></td>
 
-					<form:errors class="error" path="lastName"></form:errors>
-				
-				
-					<div class="form-group">
+					<td><form:errors path="lastName"></form:errors></td>
+				</tr>
+				<tr>
+					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 								<form:input class="form-control" path="age" name="age"
 									required="required" placeholder="Age" />
 							</div>
-						</div>
-					<form:errors class="error" path="age"></form:errors>
-				
-				
-					<div class="form-group">
+						</div></td>
+					<td><form:errors path="age"></form:errors></td>
+				</tr>
+				<tr>
+					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-mars"></i></span>
 								<div class="form-control form-check-inline">
@@ -189,39 +189,39 @@ color:#ff6666;
 											path="gender" id="gender" value="Female"
 											class="form-check-input" name="optradio" />Female
 									</label>
-								</div>
+								</div></td>
 
-					<form:errors class="error" path="gender"></form:errors>
-
-					</div>
+					<td><form:errors path="gender"></form:errors></td>
 
 					</div>
-				
 
-				
-					<div class="form-group">
+					</div>
+				</tr>
+
+				<tr>
+					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input class="form-control" name="contact" path="contact"
 									required="required" placeholder="Contact Number" />
 							</div>
-						</div>
+						</div></td>
 
-					<form:errors class="error" path="contact"></form:errors>
-				
-				
-					<div class="form-group">
+					<td><form:errors path="contact"></form:errors></td>
+				</tr>
+				<tr>
+					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-id-card"></i></span>
 								<form:input path="organizerId" class="form-control"
 									name="organizerId" placeholder="Organizer Id"
 									required="required" />
 							</div>
-						</div>
-					<form:errors class="error" path="organizerId"></form:errors>
-				
-				
-					<div class="form-group">
+						</div></td>
+					<td><form:errors path="organizerId"></form:errors></td>
+				</tr>
+				<tr>
+					<td><div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"> <i class="fa fa-lock"></i>
 									<i class="fa fa-check"></i>
@@ -229,17 +229,17 @@ color:#ff6666;
 								<form:input path="password" class="form-control" name="password"
 									placeholder="Password" required="required" />
 							</div>
-						</div>
+						</div></td>
 
-					<form:errors class="error" path="password"></form:errors>
-				
-				
-					<div class="form-group">
+					<td><form:errors path="password"></form:errors></td>
+				</tr>
+				<tr>
+					<td><div class="form-group">
 							<input type="submit" name="Register" value="Register"
 								class="btn btn-primary btn-block btn-lg" />
-						</div>
-				
-				
+						</div></td>
+				</tr>
+				<table>
 					</form:form>
 
 					<div class="text-center">
