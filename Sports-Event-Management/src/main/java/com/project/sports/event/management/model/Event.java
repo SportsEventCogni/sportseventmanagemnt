@@ -38,8 +38,7 @@ public class Event {
 
 	@Override
 	public String toString() {
-		return "Event [eventId=" + eventId + ", eventName=" + eventName + ", sportsName=" + sportsName + ", Date="
-				+ date + ", time=" + time + ", venue=" + venue + ", noOfSlots=" + noOfSlots + "]";
+		return eventId + ":" + eventName + ":";
 	}
 
 	public String getEventId() {

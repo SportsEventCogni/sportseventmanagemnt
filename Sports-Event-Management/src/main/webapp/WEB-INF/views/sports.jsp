@@ -21,7 +21,9 @@
 <style type="text/css">
 body {
 	color: #999;
-	background: #f5f5f5;
+	background-image: url("drawable/sportsAdd.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -35,6 +37,7 @@ body {
 	margin: 0 auto;
 	padding: 30px 0;
 	border-radius: 9px;
+	margin-top: 80px;
 }
 
 .signup-form h2 {
@@ -128,9 +131,23 @@ body {
 	font-size: 7px;
 	position: absolute;
 }
+
+.error {
+	color: red
+}
 </style>
 
-<script>
+
+
+
+<script type="text/javascript">
+	history.pushState(null, null, location.href);
+	history.back();
+	history.forward();
+	window.onpopstate = function() {
+		history.go(1);
+	};
+
 	function validatingForm() {
 		if (document.form.sportsName.value == "") {
 			alert("Please update the highlighted field");
@@ -165,38 +182,39 @@ body {
 
 </head>
 <body>
+	<%@include file="header.html"%>
 	<div class="signup-form">
-		<form:form name="form" action="sportRegister" method="get" modelAttribute="sports" onsubmit="return validatingForm();">
+		<form:form name="form" action="sportRegister" method="get"
+			modelAttribute="sports" onsubmit="return validatingForm();">
 			<h2>Sport Registration</h2>
 			<table>
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+
 								<form:input path="sportsName" class="form-control"
 									name="sportsName" placeholder="Sports Name" />
-								<td><form:errors path="sportsName"></form:errors></td>
+								<td><form:errors path="sportsName" class="error"></form:errors></td>
 							</div>
 						</div></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+
 								<form:input path="sportsType" class="form-control"
 									name="sportsType" placeholder="Sports Type" />
-								<td><form:errors path="sportsType"></form:errors></td>
+								<td><form:errors path="sportsType" class="error"></form:errors></td>
 							</div>
 						</div></td>
 				</tr>
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+
 								<form:input type="text" path="noOfPlayers" class="form-control"
-									name="noOfPlayers" placeholder="No of Players"
-									 />
-								<td><form:errors path="noOfPlayers"></form:errors></td>
+									name="noOfPlayers" placeholder="No of Players" />
+								<td><form:errors path="noOfPlayers" class="error"></form:errors></td>
 							</div>
 						</div></td>
 				</tr>
@@ -205,11 +223,10 @@ body {
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
+
 								<form:input path="timeOfMatch" class="form-control"
-									name="timeOfMatch" placeholder="Time Of Match"
-								 />
-								<td><form:errors path="timeOfMatch"></form:errors></td>
+									name="timeOfMatch" placeholder="Time Of Match" />
+								<td><form:errors path="timeOfMatch" class="error"></form:errors></td>
 							</div>
 						</div></td>
 				</tr>
@@ -217,10 +234,10 @@ body {
 				<tr>
 					<td><div class="form-group">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
+
 								<form:input path="sportsId" class="form-control" name="sportsId"
 									placeholder="Sports Id" />
-								<td><form:errors path="sportsId"></form:errors></td>
+								<td><form:errors path="sportsId" class="error"></form:errors></td>
 
 
 							</div>
@@ -229,7 +246,7 @@ body {
 				<tr class="form-group">
 					<td><input type="Submit" name="submit"
 						class="btn btn-primary btn-block btn-lg" name="Register"
-						value="Register" /></td>
+						value="Add sport" /></td>
 					<td></td>
 				</tr>
 

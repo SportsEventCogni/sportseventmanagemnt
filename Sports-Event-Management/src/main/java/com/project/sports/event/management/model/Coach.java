@@ -22,8 +22,7 @@ public class Coach {
 	private String lastName;
 	
 	@NotNull(message = "Age name can't be null")
-	@Min(50)
-	private int age;
+	private String age;
 	private String gender;
 	
 
@@ -48,7 +47,7 @@ public class Coach {
 				+ ", contact=" + contact + ", coachId=" + coachId + ", password=" + password + "]";
 	}
 
-	public Coach(String firstName, String lastName, int age, String gender, String contact, String coachId,
+	public Coach(String firstName, String lastName, String age, String gender, String contact, String coachId,
 			String password) {
 		super();
 		this.firstName = firstName;
@@ -76,11 +75,11 @@ public class Coach {
 		this.lastName = lastName;
 	}
 
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 

@@ -9,7 +9,7 @@ import javax.validation.constraints.Pattern;
 
 import org.springframework.stereotype.Component;
 
-@Component
+
 @Entity
 public class Sports {
 	@NotEmpty(message = "Sport name can't be null")
@@ -78,11 +78,12 @@ public class Sports {
 		this.sportsId = sportsId;
 	}
 
-	public Sports(@NotEmpty(message = "Sport name can't be null") String sportsName,
-			@NotEmpty(message = "Sport type can't be null") String sportsType,
-			@NotNull(message = "noOfPlayers can't be null") @Min(2) String noOfPlayers,
+	public Sports(
+			@NotEmpty(message = "Sport name can't be null") @Pattern(regexp = "[\\w]{4,20}", message = "Contains only alphabets") String sportsName,
+			@Pattern(regexp = "[\\w]{4,20}", message = "Contains only alphabets") @NotEmpty(message = "Sport type can't be null") String sportsType,
+			@NotNull(message = "noOfPlayers can't be null") @Pattern(regexp = "(^[1-9]\\d{0,1})", message = "Should be in the range of 1-100") String noOfPlayers,
 			@NotEmpty(message = "time can't be empty") @Pattern(regexp = "^(([0-1]?[0-9])|([2][0-3])):([0-5]?[0-9])(:([0-5]?[0-9]))?$", message = "Time should be given in a:b format") String timeOfMatch,
-			@NotNull(message = "Sports id can't be empty") String sportsId) {
+			@NotNull(message = "Sports id can't be empty") @Pattern(regexp = "[0-9]{4,8}", message = "Should be Integer between 4-8 digits") String sportsId) {
 		super();
 		this.sportsName = sportsName;
 		this.sportsType = sportsType;
@@ -90,5 +91,7 @@ public class Sports {
 		this.timeOfMatch = timeOfMatch;
 		this.sportsId = sportsId;
 	}
+
+	
 
 }
