@@ -19,7 +19,7 @@ body {
 	background-size: cover;
 }
 
-span {
+.text span {
 	font-size: 15px;
 }
 

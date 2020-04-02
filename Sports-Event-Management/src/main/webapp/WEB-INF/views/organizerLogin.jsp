@@ -23,7 +23,9 @@
 <style type="text/css">
 body {
 	color: #999;
-	background: #f5f5f5;
+	background-image: url("drawable/login.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -58,6 +60,7 @@ body {
 	border: 1px solid #f3f3f3;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 	padding: 30px;
+	margin-top:100px;
 }
 
 .signup-form .form-group {

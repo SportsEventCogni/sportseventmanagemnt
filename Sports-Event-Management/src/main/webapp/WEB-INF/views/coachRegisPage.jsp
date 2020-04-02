@@ -21,7 +21,9 @@
 <style type="text/css">
 body {
 	color: #999;
-	background: #f5f5f5;
+	background-image: url("drawable/register.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -42,7 +44,11 @@ body {
 	margin: 0 0 15px;
 	text-align: center;
 }
-
+.form-group{
+margin:0;}
+.error{
+color:red;
+}
 .signup-form .lead {
 	font-size: 14px;
 	margin-bottom: 30px;
@@ -51,12 +57,14 @@ body {
 
 .signup-form form {
 	border-radius: 1px;
-	margin-bottom: 15px;
+	
 	background: #fff;
 	border: 1px solid #f3f3f3;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 	padding: 30px;
+	margin-top:100px;
 }
+
 
 .signup-form .form-group {
 	margin-bottom: 20px;
@@ -167,41 +175,41 @@ body {
 		<form:form action="coachRegisterUser" method="post"
 			modelAttribute="coach">
 			<h2>Coach Registration</h2>
-			<table>
-				<tr>
-					<td><div class="form-group">
+			
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input path="firstName" class="form-control"
 									name="firstName" placeholder="First Name" required="required" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="firstName"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error" path="firstName"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input class="form-control" path="lastName" name="lastName"
 									required="required" placeholder="Last Name" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="lastName"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error" path="lastName"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 								<form:input class="form-control" path="age" name="age"
 									required="required" placeholder="Age" />
 							</div>
-						</div></td>
-					<td><form:errors path="age"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+						</div>
+					<form:errors class="error" path="age"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-mars"></i></span>
 								<div class="form-control form-check-inline">
@@ -217,38 +225,38 @@ body {
 											path="gender" id="gender" value="Female"
 											class="form-check-input" name="optradio" />Female
 									</label>
-								</div></td>
+								</div>
 
-					<td><form:errors path="gender"></form:errors></td>
-
-					</div>
+					<form:errors class="error" path="gender"></form:errors>
 
 					</div>
-				</tr>
 
-				<tr>
-					<td><div class="form-group">
+					</div>
+				
+
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input class="form-control" name="contact" path="contact"
 									required="required" placeholder="Contact Number" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="contact"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error" path="contact"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-id-card"></i></span>
 								<form:input path="coachId" class="form-control" name="coachId"
 									placeholder="Coach Id" required="required" />
 							</div>
-						</div></td>
-					<td><form:errors path="coachId"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+						</div>
+					<form:errors class="error" path="coachId"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"> <i class="fa fa-lock"></i>
 									<i class="fa fa-check"></i>
@@ -256,17 +264,17 @@ body {
 								<form:input type="password" path="password" class="form-control"
 									name="password" placeholder="Password" required="required" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="password"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error" path="password"></form:errors>
+				
+				
+					<s class="form-group">
 							<input type="submit" name="Register" value="Register"
 								class="btn btn-primary btn-block btn-lg" />
-						</div></td>
-				</tr>
-				<table>
+						</div>
+				
+				
 					</form:form>
 
 					<div class="text-center">

@@ -115,10 +115,11 @@ public class CoachLoginController {
 	public String coachHome(ModelMap map, HttpSession session) {
 
 		List<Event> li = eventRepository.findAll();
-
+		List<NotificationCoach> temp = notificationCoachRepos.findAll();
+		int coachSize=temp.size();
 		session.removeAttribute("eventList");
 		session.setAttribute("eventList", li);
-
+        map.put("coachSize", coachSize);
 		return "coachHome";
 	}
 

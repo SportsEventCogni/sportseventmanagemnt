@@ -77,6 +77,13 @@ public class OrganizerLoginController {
 		if (org != null) {
 			session.setAttribute("id", credentials);
 			map.put("credentials", credentials);
+			
+		List<SponsorRegis> sponsorRegis	=sponsorReqRepos.findAll();
+		int sizeSponsor=sponsorRegis.size();
+	    List<CoachRegis> coachRegis=coachReqRepos.findAll();
+	    int sizeCoach=coachRegis.size();
+		map.put("sizeSponsor",sizeSponsor);
+		map.put("sizeCoach",sizeCoach);
 			return "organizerHome";
 		}
 
@@ -132,8 +139,9 @@ public class OrganizerLoginController {
 	public String sponsorRequests(@ModelAttribute("sponsorregis") SponsorRegis sponsorRegis, ModelMap m,
 			HttpSession session) {
 		List<SponsorRegis> sponsorList = sponsorReqRepos.findAll();
-
-		
+	    List<CoachRegis> coachRegis=coachReqRepos.findAll();
+	    int sizeCoach=coachRegis.size();
+		m.put("sizeCoach",sizeCoach);
 		m.addAttribute("sponsorList", sponsorList);
 
 		return "sponsorRequest";
@@ -198,7 +206,9 @@ public class OrganizerLoginController {
 	@RequestMapping("/coachRequests")
 	public String listRequest(@ModelAttribute("coachregis") CoachRegis coachRegis, ModelMap m, HttpSession session) {
 		List<CoachRegis> coachList = coachReqRepos.findAll();
-
+		List<SponsorRegis> sponsorRegis	=sponsorReqRepos.findAll();
+		int sizeSponsor=sponsorRegis.size();
+		m.put("sizeSponsor",sizeSponsor);
 		m.addAttribute("coachList", coachList);
 
 		return "coachRequest";
@@ -258,7 +268,13 @@ public class OrganizerLoginController {
 	}
 
 	@RequestMapping("headerHome")
-	public String organizerHomeForHeader() {
+	public String organizerHomeForHeader(ModelMap map) {
+		List<SponsorRegis> sponsorRegis	=sponsorReqRepos.findAll();
+		int sizeSponsor=sponsorRegis.size();
+	    List<CoachRegis> coachRegis=coachReqRepos.findAll();
+	    int sizeCoach=coachRegis.size();
+		map.put("sizeSponsor",sizeSponsor);
+		map.put("sizeCoach",sizeCoach);
 		return "organizerHome";
 	}
 

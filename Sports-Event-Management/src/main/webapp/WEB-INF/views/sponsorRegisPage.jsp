@@ -21,7 +21,9 @@
 <style type="text/css">
 body {
 	color: #999;
-	background: #f5f5f5;
+	background-image: url("drawable/register.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -42,7 +44,11 @@ body {
 	margin: 0 0 15px;
 	text-align: center;
 }
-
+.form-group{
+margin:0;}
+.error{
+color:red;
+}
 .signup-form .lead {
 	font-size: 14px;
 	margin-bottom: 30px;
@@ -51,15 +57,16 @@ body {
 
 .signup-form form {
 	border-radius: 1px;
-	margin-bottom: 15px;
+	
 	background: #fff;
 	border: 1px solid #f3f3f3;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 	padding: 30px;
+	margin-top:100px;
 }
 
 .signup-form .form-group {
-	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 .btn {
@@ -165,20 +172,20 @@ body {
 		<form:form action="sponsorRegisterUser" method="post"
 			modelAttribute="sponsor">
 			<h2>Sponsor Registration</h2>
-			<table>
-				<tr>
-					<td><div class="form-group">
+			
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input path="sponsorId" class="form-control"
 									name="sponsorId" placeholder="Sponsor Id" required="required" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="sponsorId"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error" path="sponsorId"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"> <i class="fa fa-lock"></i>
 									<i class="fa fa-check"></i>
@@ -186,43 +193,43 @@ body {
 								<form:input type="password" path="password" class="form-control"
 									name="password" placeholder="Password" required="required" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="password"></form:errors></td>
-				</tr>
+					<form:errors class="error"  path="password"></form:errors>
+				
 
 
-				<tr>
-					<td><div class="form-group">
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input class="form-control" name="sponsorProduct"
 									path="sponsorProduct" required="required"
 									placeholder="Sponsor Product" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="sponsorProduct"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error"  path="sponsorProduct"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-id-card"></i></span>
 								<form:input path="sponsorshipLocation" class="form-control"
 									name="sponsorshipLocation" placeholder="Sponsorship Location"
 									required="required" />
 							</div>
-						</div></td>
-					<td><form:errors path="sponsorshipLocation"></form:errors></td>
-				</tr>
+						</div>
+					<form:errors class="error"  path="sponsorshipLocation"></form:errors>
+				
 
-				<tr>
-					<td><div class="form-group">
+				
+					<div class="form-group">
 							<input type="submit" name="Register" value="Register"
 								class="btn btn-primary btn-block btn-lg" />
-						</div></td>
-				</tr>
-				<table>
+						</div>
+				
+				
 					</form:form>
 
 					<div class="text-center">

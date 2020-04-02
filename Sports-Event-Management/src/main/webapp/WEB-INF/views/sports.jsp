@@ -45,7 +45,11 @@ body {
 	margin: 0 0 15px;
 	text-align: center;
 }
-
+.form-group{
+margin:0;}
+.error{
+color:red;
+}
 .signup-form .lead {
 	font-size: 14px;
 	margin-bottom: 30px;
@@ -54,12 +58,14 @@ body {
 
 .signup-form form {
 	border-radius: 1px;
-	margin-bottom: 15px;
+	
 	background: #fff;
 	border: 1px solid #f3f3f3;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 	padding: 30px;
+	margin-top:100px;
 }
+
 
 .signup-form .form-group {
 	margin-bottom: 20px;
@@ -132,9 +138,7 @@ body {
 	position: absolute;
 }
 
-.error {
-	color: red
-}
+
 </style>
 
 
@@ -207,74 +211,74 @@ body {
 		<form:form name="form" action="sportRegister" method="get"
 			modelAttribute="sports" onsubmit="return validatingForm();">
 			<h2>Sport Registration</h2>
-			<table>
-				<tr>
-					<td><div class="form-group">
+			
+				
+					<div class="form-group">
 							<div class="input-group">
 
 								<form:input path="sportsName" class="form-control"
 									name="sportsName" placeholder="Sports Name" />
-								<td><form:errors path="sportsName" class="error"></form:errors></td>
+								<form:errors class="error" path="sportsName" ></form:errors>
 							</div>
-						</div></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+						</div>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 
 								<form:input path="sportsType" class="form-control"
 									name="sportsType" placeholder="Sports Type" />
-								<td><form:errors path="sportsType" class="error"></form:errors></td>
+								<form:errors class="error" path="sportsType" ></form:errors>
 							</div>
-						</div></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+						</div>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 
 								<form:input type="text" path="noOfPlayers" class="form-control"
 									name="noOfPlayers" placeholder="No of Players" />
-								<td><form:errors path="noOfPlayers" class="error"></form:errors></td>
+								<form:errors class="error" path="noOfPlayers" ></form:errors>
 							</div>
-						</div></td>
-				</tr>
+						</div>
+				
 
 
-				<tr>
-					<td><div class="form-group">
+				
+					<div class="form-group">
 							<div class="input-group">
 
 								<form:input path="timeOfMatch" class="form-control"
 									name="timeOfMatch" placeholder="Time Of Match" />
-								<td><form:errors path="timeOfMatch" class="error"></form:errors></td>
+								<form:errors class="error" path="timeOfMatch" ></form:errors>
 							</div>
-						</div></td>
-				</tr>
+						</div>
+				
 
-				<tr>
-					<td><div class="form-group">
+				
+					<div class="form-group">
 							<div class="input-group">
 
 								<form:input path="sportsId" class="form-control" name="sportsId"
 									placeholder="Sports Id" />
-								<td><form:errors path="sportsId" class="error"></form:errors></td>
+								<form:errors class="error" path="sportsId" ></form:errors>
 
 
 							</div>
-						</div></td>
-				</tr>
+						</div>
+				
 				<tr class="form-group">
-					<td><input type="Submit" name="submit"
+					<input type="Submit" name="submit"
 						class="btn btn-primary btn-block btn-lg" name="Register"
-						value="Add sport" /></td>
-					<td></td>
-				</tr>
+						value="Add sport" />
+					
+				
 
 
 				<div>${successful}</div>
 
 				</div>
-				<table>
+				
 					</form:form>
 
 

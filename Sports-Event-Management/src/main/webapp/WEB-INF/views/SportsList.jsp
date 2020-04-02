@@ -13,6 +13,15 @@ background-image: url("drawable/sportsAdd.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.select{
+margin-top:100px;
+font-size:25px;
+border-radius:10px;
+}
+.sub{
+font-size:25px;
+border-radius:10px;
+}
 </style>
 
 <script type="text/javascript">
@@ -34,7 +43,7 @@ window.onpopstate = function() {
 <center>
 <form:form style="margin-top:90px; " action="updateSport" method="get"  modelAttribute="sports">
  
-<form:select path="sportsId">  
+<form:select class="select" path="sportsId">  
    <c:forEach var="list" items="${li}">
        <option id="id" value="${list.getSportsId()}">${list.getSportsName()}</option> 
       
@@ -42,7 +51,7 @@ window.onpopstate = function() {
 </form:select>
  
 
-<input type="submit" value="submit">
+<input class="sub" type="submit" value="submit">
 </form:form>
 
 </center>

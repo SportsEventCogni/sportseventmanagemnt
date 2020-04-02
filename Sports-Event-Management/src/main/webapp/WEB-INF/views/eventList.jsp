@@ -13,6 +13,16 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+.select{
+margin-top:100px;
+font-size:25px;
+border-radius:10px;
+}
+.sub{
+font-size:25px;
+border-radius:10px;
+}
 </style>
 
 
@@ -34,7 +44,8 @@ window.onpopstate = function() {
 		<form:form style="margin-top:90px; " action="updateEvent" method="get"
 			modelAttribute="event">
 
-			<form:select path="eventId">
+			<form:select class="select" path="eventId">
+		<option>Select The Event</option>
 				<c:forEach var="list" items="${li}">
 					<option id="id" value="${list.getEventId()}">${list.getEventName()}</option>
 
@@ -42,7 +53,7 @@ window.onpopstate = function() {
 			</form:select>
 
 
-			<input type="submit" value="submit">
+			<input class="sub" type="submit" value="submit">
 		</form:form>
 
 	</center>

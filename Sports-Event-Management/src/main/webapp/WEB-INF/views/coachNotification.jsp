@@ -11,6 +11,11 @@
 <style type="text/css">
 @import "compass/css3";
 
+body {
+	background-image: url("drawable/coach.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 .responstable {
 	margin: 1em 0;
 	width: 100%;
@@ -96,13 +101,12 @@ body {
 	padding: 0 2em;
 	font-family: Arial, sans-serif;
 	color: #024457;
-	background: #f2f2f2;
 }
 
 .h1 {
 	font-family: Verdana;
 	font-weight: normal;
-	color: #024457;
+	color: white;
 	text-align: center;
 	margin-top: 100px;
 }

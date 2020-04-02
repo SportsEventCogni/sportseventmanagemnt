@@ -111,10 +111,11 @@ public class SponsorLoginController {
 	public String sportsHome(ModelMap map, HttpSession session) {
 
 		List<Event> li = eventRepository.findAll();
-
+		List<NotificationSponsor> temp = notificationSponsorRepos.findAll();
+		int size=temp.size();
 		session.removeAttribute("event");
 		session.setAttribute("event", li);
-
+        map.put("sponsorSize",size);
 		return "SponsorHome";
 	}
 

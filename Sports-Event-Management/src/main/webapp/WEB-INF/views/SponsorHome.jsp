@@ -95,13 +95,15 @@ body {
 	padding: 0 2em;
 	font-family: Arial, sans-serif;
 	color: #024457;
-	background: #f2f2f2;
+	background-image: url("drawable/sponsor.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .h1 {
 	font-family: Verdana;
 	font-weight: normal;
-	color: #024457;
+	color: white;
 	text-align: center;
 	margin-top: 100px;
 }
@@ -175,8 +177,8 @@ body {
 							value="Nominate for Sponsorship">Nominate for
 							Sponsorship</button></td>
 
-					<td><input type="hidden" name="EventRegistration"
-						name="EventRegistration" value="${event}" /></td>
+					<input type="hidden" name="EventRegistration"
+						name="EventRegistration" value="${event}" />
 
 
 				</tr>

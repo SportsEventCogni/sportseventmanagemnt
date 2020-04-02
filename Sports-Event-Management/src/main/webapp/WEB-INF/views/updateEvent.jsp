@@ -46,6 +46,11 @@ body {
 	text-align: center;
 }
 
+.form-group{
+margin:0;}
+.error{
+color:red;
+}
 .signup-form .lead {
 	font-size: 14px;
 	margin-bottom: 30px;
@@ -54,11 +59,12 @@ body {
 
 .signup-form form {
 	border-radius: 1px;
-	margin-bottom: 15px;
+	
 	background: #fff;
 	border: 1px solid #f3f3f3;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 	padding: 30px;
+	margin-top:100px;
 }
 
 .signup-form .form-group {
@@ -139,65 +145,65 @@ body {
 	
 		<form:form action="updateEventF" method="post" modelAttribute="event">
 			<h2>Edit Your Event</h2>
-			<table>
-				<tr>
-					<td><div class="form-group">
+			
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input path="eventId" class="form-control" name="eventId"
 									placeholder="Event Id" required="required" readonly="true" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="eventId"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error" path="eventId"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<form:input class="form-control" path="eventName"
 									name="eventName" required="required" readonly="true"
 									placeholder="Event Name" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="eventName"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error" path="eventName"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 								<form:input class="form-control" path="sportsName"
 								 readonly="true"	name="sportsName" required="required" placeholder="Sports Name" />
 							</div>
-						</div></td>
-					<td><form:errors path="sportsName"></form:errors></td>
-				</tr>
+						</div>
+					<form:errors class="error" path="sportsName"></form:errors>
+				
 
 
-				<tr>
-					<td><div class="form-group">
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input type="date" class="form-control" name="Date"
 									path="Date" required="required" placeholder="Date" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="Date"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error" path="Date"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-id-card"></i></span>
 								<form:input path="time" class="form-control" name="time"
 									placeholder="Time" required="required" />
 							</div>
-						</div></td>
-					<td><form:errors path="time"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+						</div>
+					<form:errors class="error" path="time"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"> <i class="fa fa-lock"></i>
 									<i class="fa fa-check"></i>
@@ -205,28 +211,28 @@ body {
 								<form:input path="venue" class="form-control" name="venue"
 									placeholder="Venue" required="required" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="venue"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error" path="venue"></form:errors>
+				
+				
+					<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-phone"></i></span>
 								<form:input class="form-control" name="noOfSlots"
 									path="noOfSlots" required="required" placeholder="No Of Slots" />
 							</div>
-						</div></td>
+						</div>
 
-					<td><form:errors path="noOfSlots"></form:errors></td>
-				</tr>
-				<tr>
-					<td><div class="form-group">
+					<form:errors class="error" path="noOfSlots"></form:errors>
+				
+				
+					<div class="form-group">
 							<input type="submit" name="Register" value="Register"
 								class="btn btn-primary btn-block btn-lg" />
-						</div></td>
-				</tr>
-				<table>
+						</div>
+				
+				
 					</form:form>
 </body>
 </html>

@@ -96,13 +96,15 @@ body {
 	padding: 0 2em;
 	font-family: Arial, sans-serif;
 	color: #024457;
-	background: #f2f2f2;
+	background-image: url("drawable/sponsor.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .h1 {
 	font-family: Verdana;
 	font-weight: normal;
-	color: #024457;
+	color: white;
 	text-align: center;
 	margin-top: 100px;
 }
@@ -141,15 +143,19 @@ body {
 
 
 
-					<td><input type="hidden" id="EventRegistration"
-						name="EventRegistration" value="${notificationSponsorList}" /></td>
+					<input type="hidden" id="EventRegistration"
+						name="EventRegistration" value="${notificationSponsorList}" />
 
 
 				</tr>
 
 			</c:forEach>
-
-
+<%
+if(request.getAttribute("javax.servlet.forward.request_uri").equals("/sponsorNotify")){
+	out.print("Raju");
+}
+%>
+   ${requestScope['javax.servlet.forward.request_uri']}
 
 		</table>
 	</form:form>
