@@ -130,26 +130,72 @@ body {
 	font-size: 7px;
 	position: absolute;
 }
+
+#fadeout {
+	opacity: 1;
+	transition: 1s opacity;
+	text-align: center;
+	font-size: 32px;
+}
 </style>
+
+
+<script type="text/javascript">
+	window.onload = function() {
+		window.setTimeout(fadeout, 1000); //8 seconds
+	}
+
+	function fadeout() {
+		document.getElementById('fadeout').style.opacity = '0';
+	}
+
+	history.pushState(null, null, location.href);
+	history.back();
+	history.forward();
+	window.onpopstate = function() {
+		history.go(1);
+	};
+
+	/* <	$(document).on('mouseenter', function(e) { 
+	       window.onbeforeunload = null; 
+	   }
+	); 
+	
+
+
+	$(document).on('mouseleave', function(e) { 
+	       window.onbeforeunload = function() { return "You work will be lost."; };
+	   }
+	);
+
+	 */
+</script>
+
 </head>
 <body>
+
 
 	<%
 		String succ = (String) request.getAttribute("successful");
 		if (succ != null && succ != null)
-			out.println(succ);
+			out.println(" <div  style='margin-top:50px;' id='fadeout'>" + succ + "</div> ");
 
 		String fail = (String) request.getAttribute("failed");
+
 		if (fail != null && fail.length() != 0)
-			out.println(fail);
+			out.println(" <div  style='margin-top:50px;' id='fadeout'>" + fail + "</div> ");
 	%>
 
+
+
+	<%@include file="headerLogin.html"%>
 
 
 
 	<div class="signup-form">
 
-		<form:form action="sponsorSub" method="get" modelAttribute="credentials">
+		<form:form action="sponsorSub" method="post"
+			modelAttribute="credentials">
 			<h2>Login</h2>
 
 			<div class="form-group">

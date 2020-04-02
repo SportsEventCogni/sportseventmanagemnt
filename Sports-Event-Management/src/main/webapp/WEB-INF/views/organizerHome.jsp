@@ -14,7 +14,9 @@
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style type="text/css">
 body {
-	background: #eee;
+	background-image: url("drawable/organizerHome.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 span {
@@ -23,7 +25,6 @@ span {
 
 .box {
 	padding: 60px 0px;
-	background: #eee;
 }
 
 h1 {
@@ -31,7 +32,7 @@ h1 {
 }
 
 .container {
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 .box-part {
@@ -72,16 +73,52 @@ h1 {
 	color: #4183D7;
 }
 
-a:hover {
-	text-decoration: none;
+a:hover, a:focus, a:active {
+	outline: none;
+}
+
+#fadeout {
+	opacity: 1;
+	transition: 1s opacity;
+	text-align: center;
+	font-size: 32px;
 }
 </style>
+
+<script type="text/javascript">
+	history.pushState(null, null, location.href);
+	history.back();
+	history.forward();
+	window.onpopstate = function() {
+		history.go(1);
+	};
+</script>
+
+<script type="text/javascript">
+	window.onload = function() {
+		window.setTimeout(fadeout, 2000); //8 seconds
+	}
+
+	function fadeout() {
+		document.getElementById('fadeout').style.opacity = '0';
+	}
+</script>
+
+
 </head>
 <body>
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<div class="box">
-		<h1>Welcome ${name }</h1>
+		<%@include file="header.html"%>
+
+
+		<center>
+
+			<div style="margin-top: 50px;" id="fadeout">${successful}</div>
+		</center>
+
+
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -126,9 +163,23 @@ a:hover {
 							<h4>Update Event</h4>
 						</div>
 						<div class="text">
-							<span>It will redirect to the page where you can update Events
-								</span> <a href="listEvent"><button type="submit"
+							<span>It will redirect to the page where you can update
+								Events </span> <a href="listEvent"><button type="submit"
 									class="btn btn-block">Update</button></a>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+					<div class="box-part text-center">
+						<div class="title">
+							<h4>Event Report</h4>
+						</div>
+						<div class="text">
+							<span>It will redirect to the page where you can see the
+								Report </span> <a href="listEventReport"><button type="submit"
+									class="btn btn-block">Report</button></a>
 						</div>
 					</div>
 				</div>
@@ -139,8 +190,8 @@ a:hover {
 							<h4>Cancel Event</h4>
 						</div>
 						<div class="text">
-							<span>It will redirect to the page where you can cancel an Event
-								</span> <a href="/home"><button type="submit"
+							<span>It will redirect to the page where you can cancel an
+								Event </span> <a href="listEventD"><button type="submit"
 									class="btn btn-block">Cancel</button></a>
 						</div>
 					</div>
@@ -149,7 +200,6 @@ a:hover {
 
 
 			</div>
-			<a href="/logout"><button type="submit" class="btn center">Logout</button></a>
 		</div>
 	</div>
 </body>
